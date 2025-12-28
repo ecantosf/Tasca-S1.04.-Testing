@@ -1,10 +1,57 @@
 package library.sp1ta4le1ex1;
 
-public class Main {
-    public static void main(String[] args) {
-        System.out.println("Projecte library-s1-t4-l1-e1 inicialitzat correctament!");
+import java.util.Scanner;
 
+public class Main {
+    private static void showMenu() {
+        System.out.println("\nLIBRARY MANAGEMENT:");
+        System.out.println("1. Add book (at the end)");
+        System.out.println("2. Show all books");
+        System.out.println("3. Search book by position");
+        System.out.println("4. Add book at specific position");
+        System.out.println("5. Delete book by title");
+        System.out.println("6. Show books in alphabetical order");
+        System.out.println("7. Exit");
+    }
+
+    public static void main(String[] args) {
         Library library = new Library();
-        library.someMethod();
+        Scanner scanner = new Scanner(System.in);
+        int choice;
+
+        do {
+            showMenu();
+            System.out.println("Select an option: ");
+            choice = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (choice) {
+                case 1:
+                    library.addBook(scanner);
+                    break;
+                case 2:
+                    library.showAllBooks();
+                    break;
+                case 3:
+                    library.getBookByPosition(scanner);
+                    break;
+                case 4:
+                    library.addBookAtPosition(scanner);
+                    break;
+                case 5:
+                    library.removeBookByTitle(scanner);
+                    break;
+                case 6:
+                    library.showSortedBooks();
+                    break;
+                case 0:
+                    System.out.println("Leaving...");
+                    break;
+                default:
+                    System.out.println("Wrong choice.");
+            }
+        } while (choice != 0);
+
+        scanner.close();
     }
 }
