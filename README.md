@@ -15,8 +15,8 @@ basic features.
 input/output details.
   
 ## Exercise Statement
-Level 1: IIn this exercise, we will introduce the world of automated testing through 
-a practical example.
+Level 1: In this exercise, we will introduce the world of automated testing through 
+a practical examle.
 Additionally, we will introduce parameterized tests with JUnit 5, a very useful 
 technique for validating the same functionality with different sets of data.
 Finally, we will cover throwing and detecting exceptions in Java. The goal is to 
@@ -43,7 +43,7 @@ class iteratively, starting from the requirements expressed in each test.
 ## Technologies
 - Language: Java
 - IDE: IntelliJ IDEA
-- Build Tool: Maven/Gradle (if applicable)
+- Build Tool: Maven
 - Version Control: Git
 
 ## Installation and Execution
@@ -51,7 +51,7 @@ class iteratively, starting from the requirements expressed in each test.
 2. Open the project in IntelliJ IDEA.
 3. Configure JDK (Java 21 or later recommended).
 4. Run the main class of each exercise directly from the IDE.
-5. To run tests (if applicable)
+5. Run tests. JUnit 5 and AssertJ.
 
 ## Demo
 No aplicable.
