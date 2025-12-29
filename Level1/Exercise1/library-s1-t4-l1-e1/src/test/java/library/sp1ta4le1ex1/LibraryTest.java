@@ -1,29 +1,45 @@
 package library.sp1ta4le1ex1;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 import static org.junit.jupiter.api.Assertions.*;
 
 class LibraryTest {
 
-    @Test
-    @DisplayName("Test 1: Null List")
-    void ListNullTest() {
-        Library libraryNull = new Library();
-        libraryNull = null;
-        assertNull(libraryNull);
+    private Library library;
+
+    @BeforeEach
+    void setUp() {
+        library = new Library();  // Nova instància per a cada test
     }
 
-    /*@Test
-    void testLibraryCreation() {
-        // Given - When
-        Library library = new Library();
-        // Then
-        assertNotNull(library, "The Library instance must not be null");
+    @Test
+    @DisplayName("Test 1: Null List")
+    void testNullList() {
+        Library libraryNull = null;
+        assertNull(libraryNull, "La llista hauria de ser null");
+    }
+
+    @Test
+    void testLibraryInitiallyEmpty() {
         assertEquals(0, library.getBookCount(),
-                "A new library should be empty");
-    }*/
+                "La biblioteca hauria d'estar buida inicialment");
+    }
+
+    @Test
+    @DisplayName("Test 2: Add 4 books")
+    void testAddFourBooks() {
+        // Comprovar que després d'afegir 4 llibres, la mida és 4
+        library.addBook(new Book("La plaça del diamant"));
+        library.addBook(new Book("Tirant lo Blanc"));
+        library.addBook(new Book("Terra Baixa"));
+        library.addBook(new Book("El mirall"));
+
+        assertEquals(4, library.getBookCount(),
+                "Després d'afegir 4 llibres, la mida hauria de ser 4");
+    }
 
     /*@Test
     void getNegativeTest() {

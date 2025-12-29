@@ -16,6 +16,10 @@ public class Library {
         return books;
     }
 
+    public void addBook(Book book) {
+        books.add(book);
+    }
+
     public void addBook(Scanner scanner) {
         System.out.print("Enter book title: ");
         String title = scanner.nextLine().trim();
