@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     private static void showMenu() {
-        System.out.println("\nLIBRARY MANAGEMENT:");
+        System.out.println("\nLibrary Management:");
         System.out.println("1. Add book (at the end)");
         System.out.println("2. Show all books");
         System.out.println("3. Search book by position");
@@ -21,7 +21,7 @@ public class Main {
 
         do {
             showMenu();
-            System.out.println("Select an option: ");
+            System.out.print("Select an option: ");
             choice = scanner.nextInt();
             scanner.nextLine();
 
@@ -36,7 +36,7 @@ public class Main {
                     library.getBookByPosition(scanner);
                     break;
                 case 4:
-                    library.addBookAtPosition(scanner);
+                    library.addBookAtPosition(scanner); // Corregit: sense segon paràmetre
                     break;
                 case 5:
                     library.removeBookByTitle(scanner);
@@ -44,13 +44,13 @@ public class Main {
                 case 6:
                     library.showSortedBooks();
                     break;
-                case 0:
+                case 7: // Canviat de 0 a 7 per coincidir amb el menú
                     System.out.println("Leaving...");
                     break;
                 default:
                     System.out.println("Wrong choice.");
             }
-        } while (choice != 0);
+        } while (choice != 7); // Canviat de 0 a 7
 
         scanner.close();
     }

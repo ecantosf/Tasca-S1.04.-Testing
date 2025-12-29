@@ -27,11 +27,12 @@ public class Book {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
         Book book = (Book) obj;
-        return Objects.equals(title, book.title);
+        // Fer equals case-insensitive per ser consistent amb hashCode
+        return Objects.equals(title.toLowerCase(), book.title.toLowerCase());
     }
 
     @Override
     public int hashCode() {
-        return title.toLowerCase().hashCode();
+        return Objects.hash(title.toLowerCase());
     }
 }
