@@ -1,4 +1,4 @@
 package assertj.sp1ta4le2ex2;
 
-public class reference {
+public class Reference {
 }
